@@ -7,33 +7,42 @@ import java.util.*;
 
 public class MojBrojServer {
 
-    public static int PORT = 1235;
+    public static int PORT = 1236;
     public static void main(String[] args) {
         try {
             ServerSocket server = new ServerSocket(PORT);
             System.err.println("Listening for client");
+            Socket client=null;
 
-            Socket client = server.accept();
+            while(true) {
 
-            System.err.println("Client accepted");
-            BufferedReader in = new BufferedReader(new InputStreamReader(client.getInputStream()));
-            BufferedWriter out = new BufferedWriter(new OutputStreamWriter(client.getOutputStream()));
+                try {
+                    client = server.accept();
 
-            String userLine = in.readLine();
-            String[] tokens = userLine.split(" ");
-            int niz[]=new int[6];
-            int goal = Integer.parseInt(tokens[0].trim());
-            for (int i = 0;i<6;i++){
-                niz[i] = Integer.parseInt(tokens[i+1].trim());
+                    System.err.println("Client accepted");
+                    BufferedReader in = new BufferedReader(new InputStreamReader(client.getInputStream()));
+                    BufferedWriter out = new BufferedWriter(new OutputStreamWriter(client.getOutputStream()));
+
+                    String userLine = in.readLine();
+                    String[] tokens = userLine.split(" ");
+                    int niz[] = new int[6];
+                    int goal = Integer.parseInt(tokens[0].trim());
+                    for (int i = 0; i < 6; i++) {
+                        niz[i] = Integer.parseInt(tokens[i + 1].trim());
+                    }
+
+                    String result = solveAndPrint(niz, goal);
+                    out.write(result);
+                    out.newLine();
+                    out.flush();
+
+                    System.err.println("Client is served, and connection is successfully closing...");
+                } catch(Exception e){
+                    System.err.println("Closing connection with client caused by error...");
+                    client.close();
+                    continue;
+                }
             }
-
-            String result = solveAndPrint(niz,goal);
-            out.write(result);
-            out.newLine();
-            out.flush();
-
-            System.err.println("client served");
-
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -128,7 +137,6 @@ public class MojBrojServer {
                         red.add(newKey);
                     }
                     if (newValue == goal){
-                        System.out.println("ima");
                         StringBuilder sb = new StringBuilder();
                         sb.append(printExpresion(toLeftParent,toRightParent,toOperator,newKey,n));
                         sb.append("= "+goal);
@@ -148,7 +156,6 @@ public class MojBrojServer {
                             red.add(newKey);
                         }
                         if (newValue == goal) {
-                            System.out.println("ima");
                             StringBuilder sb = new StringBuilder();
                             sb.append(printExpresion(toLeftParent, toRightParent, toOperator, newKey, n));
                             sb.append("= " + goal);
