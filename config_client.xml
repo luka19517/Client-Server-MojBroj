@@ -3,7 +3,7 @@
   <dontWrapJar>false</dontWrapJar>
   <headerType>gui</headerType>
   <jar>C:\Users\Ryzen\Desktop\PROJEKTI\Moj_broj_server_client\out\artifacts\client_jar\untitled104.jar</jar>
-  <outfile>MojBroj_client.exe</outfile>
+  <outfile>client.exe</outfile>
   <errTitle></errTitle>
   <cmdLine></cmdLine>
   <chdir>.</chdir>
