@@ -32,7 +32,7 @@ Socket class and ServerSocket class
 Izvrisni .exe fajlovi server i klijent strane nalaze se u osnovnom direktorijumu repozitorijuma pod nazivima redom MojBroj_server i MojBroj_client.
 
 <h3>Linux:</h3>
-Za pokretanja server aplikacije neophodno je pozicioniranje (relativno u odnosu na bazni direktorijum repozitorijuma) u direktorijum out/artifacts/server_jar. Nakon toga potrebno je izvrsavanje komande chmod +x untitled104.jar. Na kraju komanda, java -jar untitled104.jar pokrece klijent stranu aplikacije.
+Za pokretanja server aplikacije neophodno je pozicioniranje (relativno u odnosu na bazni direktorijum repozitorijuma) u direktorijum out/artifacts/server_jar. Nakon toga potrebno je izvrsavanje komande chmod +x untitled104.jar. Na kraju komanda, java -jar untitled104.jar pokrece server stranu aplikacije.
 
 Za pokretanja klijent aplikacije neophodno je pozicioniranje (relativno u odnosu na bazni direktorijum repozitorijuma) u direktorijum out/artifacts/klijent_jar. Nakon toga potrebno je izvrsavanje komande chmod +x untitled104.jar. Na kraju komanda, java -jar untitled104.jar pokrece klijent stranu aplikacije.
 
