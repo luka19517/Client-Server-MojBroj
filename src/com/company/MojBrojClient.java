@@ -86,7 +86,8 @@ public class MojBrojClient extends Application{
                 @Override
                 public void handle(WindowEvent event) {
                     try {
-                        client = new Socket("192.168.1.250", MojBrojServer.PORT);
+                        //first paramater of constructor should be private adress of server, i am using local host for convenience
+                        client = new Socket("localhost", MojBrojServer.PORT);
                         in = new BufferedReader(new InputStreamReader(client.getInputStream()));
                         out = new BufferedWriter(new OutputStreamWriter(client.getOutputStream()));
                     }catch(IOException e){
