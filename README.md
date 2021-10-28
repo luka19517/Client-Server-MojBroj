@@ -10,13 +10,12 @@ Nakon sto je pokrenuta server strana, ona slusa na portu i ceka pokretanje klije
 (+, -, *, /), a  cija je vrednost zadati ciljni broj.
 
 <h2>Detaljniji opis aplikacije</h2>
-Napisana je u programskom jeziku Java u razvojnom okruzenju IntelliJ IDEA. Za GUI je koriscene su funkcionalnosti JavaFX bibilioteke.
-
+Napisana je u programskom jeziku Java u razvojnom okruzenju IntelliJ IDEA. Za GUI su koriscene funkcionalnosti JavaFX bibilioteke.
 Od kontejnera korisceni su nizovi, skupovi, hes mape, redovi.
-
-Za realizaciju klijent-server arhitekrure korisceni su TCP soketi ( Server i ServerSocket klase).
+Za realizaciju klijent-server arhitekture korisceni su TCP soketi ( Server i ServerSocket klase).
 
 <h2>Jezici i tehnologije koriscene u izradi</h2>
+
 Programski jezik: Java
 
 IDE: IntelliJ IDEA
